@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center, rgb(30, 30, 47), rgb(15, 15, 26));
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contenedor {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+  to { box-shadow: 0 0 40px rgba(0, 255, 255, 0.8); }
+}
+
+.qr-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: rgb(226, 229, 27);
+  text-shadow: 0 0 5px rgb(0, 255, 255), 0 0 10px rgb(0, 255, 255);
+}
+
+.qr-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 0.8rem;
+  color: rgb(0, 229, 255);
+}
+
+.explore-button {
+  background: linear-gradient(to right, rgb(123, 97, 255), rgb(0, 212, 255));
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  margin-top: 20px;
+}
+
+.explore-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, rgb(90, 70, 177), rgb(0, 153, 204));
+}
+
+.secondary-button {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  animation: agujeroNegro 0.8s ease-out forwards;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.secondary-button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes agujeroNegro {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.elemento-visual {
+  margin-top: 20px;
+  font-size: 48px;
+  display: none;
+  animation: aparecer 1s ease-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.frase {
+  opacity: 0; /* Inicia con opacidad 0 para la animación */
+  transition: opacity 0.5s; /* Transición suave */
+}
